@@ -56,13 +56,6 @@ h1, h2, h3, h4, h5, p {
   z-index: 500;
 }
 
-.marker:hover {
-  background-color: #eee;
-
-  /* Hovers should trump selections */
-  z-index: 501;
-}
-
 .marker-symbol {
   width: 100%;
   text-align: center;
@@ -86,8 +79,7 @@ h1, h2, h3, h4, h5, p {
   transition: opacity 200ms ease-in-out;
 }
 
-.marker.selected .marker-popup,
-.marker:hover .marker-popup {
+.marker.selected .marker-popup {
   opacity: 0.9;
   visibility: visible !important;
 }
@@ -182,7 +174,7 @@ h1, h2, h3, h4, h5, p {
   }
 }
 
-/* Media Queries */
+/* Media Queries for smaller screens */
 @media screen and (max-width: 680px) {
   .app {
     flex-direction: column;
@@ -210,7 +202,20 @@ h1, h2, h3, h4, h5, p {
   .fetch-loading {
     height: 50vh;
   }
+}
 
-  /* TODO: Remove confusing hover state for mobile browsers */
+/* Prevent touch-screen browsers from using confusing hover state */
+/* NOTE: Hover state in non-touch-screen browsers should be the same as our .selected state */
+@media (hover: hover) {
+  .marker:hover {
+    background-color: #eee;
 
+    /* Hovers should trump selections */
+    z-index: 501;
+  }
+
+  .marker:hover .marker-popup {
+    opacity: 0.9;
+    visibility: visible !important;
+  }
 }
