@@ -109,7 +109,6 @@ const App = () => {
   }
 
   // TODO: probably fetch from user's location!
-  // TODO: try to fetch recordings from other places (i.e. countries, continents, etc.)
   // Fetch recordings
   useEffect(() => {
     const fetch = async () => {
