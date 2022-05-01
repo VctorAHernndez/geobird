@@ -184,7 +184,7 @@ const App = () => {
             center={center || DEFAULT_SETTINGS.center}
             defaultCenter={DEFAULT_SETTINGS.center}
             defaultZoom={DEFAULT_SETTINGS.zoom}
-            bootstrapURLKeys={{ key: 'AIzaSyDRx8JKfFptIedFH-_gNoNzi0ExJE3a-xc' }}
+            bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAP_API_KEY }}
           >
             {birdRecordings.map((recording) =>
               <Marker
