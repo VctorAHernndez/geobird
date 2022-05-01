@@ -6,4 +6,4 @@ const API = axios.create({
   baseURL,
 })
 
-export const fetchAmericanBirds = () => API.get('/recordings?query=area:america');
+export const fetchBirds = () => API.get('/recordings?query=year:2010');

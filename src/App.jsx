@@ -6,7 +6,7 @@ import Marker from './Marker';
 import Summary from './Summary';
 
 import { DEFAULT_SETTINGS } from './constants';
-import { fetchAmericanBirds } from './services';
+import { fetchBirds } from './services';
 
 import bird from './bird.png';
 
@@ -116,7 +116,7 @@ const App = () => {
       setIsFetching(true);
 
       try {
-        const { data } = await fetchAmericanBirds();
+        const { data } = await fetchBirds();
         setMetaData(data);
         setBirdRecordings(data.recordings);
 
