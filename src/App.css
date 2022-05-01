@@ -1,3 +1,4 @@
+/* General Styling */
 * {
   box-sizing: border-box;
 }
@@ -9,4 +10,191 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+}
+
+/* App Styling */
+.app {
+  display: flex;
+  flex-direction: row;
+}
+
+.map-container {
+  height: 100vh;
+  width: calc(100vw - 20rem);
+}
+
+.description-column {
+  border-left: 1px solid gray;
+  height: 100vh;
+  width: 20rem;
+  padding: 1rem;
+  background-color: white;
+  color: #333;
+}
+
+.marker {
+  background-color: white;
+  color: #333;
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 200ms ease-in-out;
+}
+
+.marker.selected {
+  background-color: #eee;
+  z-index: 500;
+}
+
+.marker:hover {
+  background-color: #eee;
+
+  /* Hovers should trump selections */
+  z-index: 501;
+}
+
+.marker-symbol {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.marker-popup {
+  visibility: hidden;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  background-color: white;
+  height: 80px;
+  width: 300px;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  padding: 1rem;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.marker.selected .marker-popup,
+.marker:hover .marker-popup {
+  opacity: 0.9;
+  visibility: visible !important;
+}
+
+.marker-name {
+  margin-bottom: 0.5rem;
+}
+
+.marker-location {
+  overflow-x: hidden;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.metadata-description p {
+  margin-bottom: 1rem;  
+}
+
+.bird-attribute-container {
+  margin-bottom: 1rem;
+}
+
+.bird-attribute-title {
+  font-weight: bold;
+  color: #777;
+}
+
+.bird-nickname-list {
+  margin-top: 0.5rem;
+  padding-left: 1.4rem;
+  list-style-type:circle;
+}
+
+/* fetching-error */
+.fetching-error p {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.fetching-error div {
+  background-color: rgb(247, 78, 40);
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+}
+
+/* Loading Screens */
+.map-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-image: url('./bird-flying.gif');
+  background-size: cover;
+}
+
+.map-placeholder h1 {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+}
+
+.fetch-loading {
+  color: #777;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  animation: fade 1s linear 0s infinite;
+  font-size: 1.5rem;
+
+  /* HACK: Subtract the height of the header portion of the sidebar */
+  height: calc(100% - 46px);
+}
+
+.fetch-loading img {
+  height: 8rem;
+  margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media Queries */
+@media screen and(max-width: 680px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .map-container {
+    height: 50vh;
+    width: 100vw;
+  }
+
+  .description-column {
+    height: 50vh;
+    width: 100vw;
+  }
 }
