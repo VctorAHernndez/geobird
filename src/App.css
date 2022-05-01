@@ -183,18 +183,18 @@ h1, h2, h3, h4, h5, p {
 }
 
 /* Media Queries */
-@media screen and(max-width: 680px) {
+@media screen and (max-width: 680px) {
   .app {
     flex-direction: column;
   }
 
   .map-container {
-    height: 50vh;
+    height: 40vh;
     width: 100vw;
   }
 
   .description-column {
-    height: 50vh;
+    height: 60vh;
     width: 100vw;
   }
 }
