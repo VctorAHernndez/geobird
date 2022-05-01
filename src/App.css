@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, p {
   list-style-type:circle;
 }
 
-/* fetching-error */
+/* Error Screens */
 .fetching-error p {
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -204,6 +204,11 @@ h1, h2, h3, h4, h5, p {
     left: calc((-300px + 50px) / 2);
     margin-bottom: 8px;    
     border-bottom-left-radius: 8px;
+  }
+
+  /* Give intrinsic height to loading screen to properly center it vertically */
+  .fetch-loading {
+    height: 50vh;
   }
 
   /* TODO: Remove confusing hover state for mobile browsers */
