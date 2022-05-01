@@ -163,7 +163,7 @@ const App = () => {
 
       // Failure Callback
       (error) => {
-        console.error('An error occurred while trying to use Geolocation! Error: ', error);
+        console.error('An error occurred while trying to use Geolocation!\nError: ', error);
         setCenter(DEFAULT_SETTINGS.center);
         setUserHasGoneThroughGeolocationPrompt(true);
       }
