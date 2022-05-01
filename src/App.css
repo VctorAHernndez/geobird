@@ -193,8 +193,19 @@ h1, h2, h3, h4, h5, p {
     width: 100vw;
   }
 
+  /* Allow smaller screens to scroll down on vertical overflow */
   .description-column {
-    height: 60vh;
+    height: initial;
     width: 100vw;
   }
+
+  /* Move popup to the middle of the marker */
+  .marker-popup {
+    left: calc((-300px + 50px) / 2);
+    margin-bottom: 8px;    
+    border-bottom-left-radius: 8px;
+  }
+
+  /* TODO: Remove confusing hover state for mobile browsers */
+
 }
