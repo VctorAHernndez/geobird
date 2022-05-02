@@ -223,6 +223,6 @@ h1, h2, h3, h4, h5, p {
 /* We should give a higher z-index to the most recently .selected marker */
 @media (hover: none) {
   .marker:active {
-    z-index: 501;
+    z-index: 502;
   }
 }
